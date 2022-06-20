@@ -4,6 +4,19 @@ import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 
 const Home: NextPage = () => {
+
+type Avenger = {
+  name:string
+  email:string
+}
+
+const a: Avenger = {
+  name:"w",
+  email:"d"
+}
+
+console.log(a)
+
   return (
     <div className={styles.container}>
       <Head>
