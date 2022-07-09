@@ -9,21 +9,20 @@ module.exports = {
     "plugin:import/typescript",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "prettier",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["import"],
+  plugins: ["import", "unused-imports"],
   rules: {
-    "import/no-unresolved": "error",
     "import/order": ["error", { "newlines-between": "always", alphabetize: { order: "asc" } }],
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {},
-    },
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "error",
+      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" },
+    ],
   },
 }
