@@ -1,21 +1,14 @@
-import type { NextPage } from "next"
+import { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
+import { useEffect } from "react"
 
 import styles from "../../styles/Home.module.css"
 
-const Home: NextPage = () => {
-  type Avenger = {
-    name: string
-    email: string
-  }
-
-  const a: Avenger = {
-    name: "w",
-    email: "d",
-  }
-
-  console.log(a)
+const Top: NextPage = () => {
+  useEffect(() => {
+    console.log("aaa")
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -76,4 +69,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Top
