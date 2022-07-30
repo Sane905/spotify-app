@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
   },
   extends: [
+    "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
@@ -15,10 +16,14 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["import", "unused-imports"],
+  plugins: ["react-hooks", "import", "unused-imports"],
   rules: {
     "import/order": ["error", { "newlines-between": "always", alphabetize: { order: "asc" } }],
     "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "react/display-name": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unknown-property": ["error", { ignore: ["class"] }],
+    "react/jsx-curly-brace-presence": ["error", "never"],
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "error",
